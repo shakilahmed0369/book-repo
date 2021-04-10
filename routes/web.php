@@ -6,6 +6,7 @@ use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\SettingsController;
+use App\Http\Controllers\Frontend\FrontendController;
 
 
 /*
@@ -19,9 +20,13 @@ use App\Http\Controllers\Backend\SettingsController;
 |
 */
 
-Route::get('/', function () {
-    return redirect('/admin');
-});
+/*
+|--------------------------------------------------------------------------
+| Frontend Routes
+|--------------------------------------------------------------------------
+| Here all Backend routs has been define    
+*/
+Route::get('/', [FrontendController::class, 'index']);
 
 /*
 |--------------------------------------------------------------------------
