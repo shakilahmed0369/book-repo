@@ -11,4 +11,9 @@ class FrontendController extends Controller
     {
         return view('frontend.pages.index');
     }
+
+    public function pdfView()
+    {
+        return view('frontend.pages.pdf-view');
+    }
 }

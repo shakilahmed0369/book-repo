@@ -8,6 +8,7 @@
   <!-- Bootstrap css -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+  @livewireStyles
 </head>
 
 <body>
@@ -36,7 +37,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  @livewireScripts
   <script>
+
     $('.search-button').click(function () {
       $(this).parent().toggleClass('open');
     });

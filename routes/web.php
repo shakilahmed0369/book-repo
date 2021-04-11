@@ -27,6 +27,7 @@ use App\Http\Controllers\Frontend\FrontendController;
 | Here all Backend routs has been define    
 */
 Route::get('/', [FrontendController::class, 'index']);
+Route::get('/pdf-view', [FrontendController::class, 'pdfView']);
 
 /*
 |--------------------------------------------------------------------------
