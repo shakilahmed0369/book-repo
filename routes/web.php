@@ -6,7 +6,9 @@ use App\Http\Controllers\Backend\MenuController;
 use App\Http\Controllers\Backend\RoleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\SettingsController;
+use App\Http\Controllers\Backend\BookController;
 use App\Http\Controllers\Frontend\FrontendController;
+
 
 
 /*
@@ -62,5 +64,7 @@ Route::group(['prefix'=> 'admin', 'as' => 'admin.'], function () {
   /* Webinfo Route */
   Route:: post('/settings/contactinfo', [SettingsController::class, 'ContactInfoUpdate'])->name('settings.contactInfoUpdate');
   Route:: post('/settings/imageupdate', [SettingsController::class, 'ImageUpdate'])->name('settings.imageUpdate');
+  /*  Book Routes */
+  Route::resource('/book', BookController::class);
 
 });

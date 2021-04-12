@@ -16,7 +16,7 @@
   </div>
   <div class="logo">
     <div class="book col text-center ">
-      <img class="img-fulid ml-5" width="300" src="{{ asset('storage/forntend/logo/logo_white.png') }}" alt="">
+      <img class="img-fulid ml-5" width="300" src="{{ asset('storage/backend/logos/logo_white.png') }}" alt="">
     </div>
   </div>
 
