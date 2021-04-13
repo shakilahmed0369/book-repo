@@ -6,14 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\BookRequest;
 use App\Models\Book;
 use Illuminate\Http\Request;
+use App\Traits\ImageTrait;
+use App\Traits\PdfTrait;
 
 class BookController extends Controller
 {
+    use ImageTrait, PdfTrait;
+
     public $book;
 
     public function __construct(Book $book)
     {
         $this->book = $book;
+        $this->middleware('admin.auth');
     }
 
     /**
@@ -33,6 +38,7 @@ class BookController extends Controller
      */
     public function create()
     {
+        
         return view('backend.pages.book.create');
     }
 
@@ -44,10 +50,12 @@ class BookController extends Controller
      */
     public function store(BookRequest $request)
     {
-        return $request->validated();
-         $book = Book::create($request->validated());
-         return back();
-        
+        $validatedData = $request->validated();
+        $validatedData['book_cover'] = ImageTrait::MakeImage($request, 'book_cover', 'storage/backend/book-covers/', 500, 331, 60);
+        $validatedData['pdf'] = PdfTrait::MakePdf($request, 'pdf', 'storage/backend/pdf/');
+        $this->book::create($validatedData);
+        toast('Book has been created!', 'success')->width('23rem');
+        return redirect()->route('admin.book.index');
     }
 
     /**
