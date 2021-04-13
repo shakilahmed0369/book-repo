@@ -38,7 +38,6 @@ class BookController extends Controller
      */
     public function create()
     {
-        
         return view('backend.pages.book.create');
     }
 
@@ -58,16 +57,6 @@ class BookController extends Controller
         return redirect()->route('admin.book.index');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
 
     /**
      * Show the form for editing the specified resource.
