@@ -44,7 +44,7 @@ class BookController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Requests\BookRequest  $request
      * @return \Illuminate\Http\Response
      */
     public function store(BookRequest $request)
@@ -66,7 +66,8 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = $this->book::find($id);
+        return view('backend.pages.book.edit', compact('book'));
     }
 
     /**
@@ -76,9 +77,13 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BookRequest $request, $id)
     {
-        //
+        $update = $this->book::find($id);
+        /* more validation and previous files will delete */
+        $update->update($request->validate());
+        toast('Book has been Update!', 'success')->width('23rem');
+        return redirect()->route('admin.book.index');
     }
 
     /**

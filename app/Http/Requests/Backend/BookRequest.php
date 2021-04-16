@@ -25,6 +25,7 @@ class BookRequest extends FormRequest
     {
         switch ($this->getMethod()) {
             case 'POST': 
+                
                 return [
                     'book_name'  => 'required|unique:books,book_name',
                     'pdf'        => 'required|mimes:pdf|max:30000',
@@ -34,7 +35,7 @@ class BookRequest extends FormRequest
 
             default: 
                 return [
-                    'book_name'  => 'required|unique:books,book_name,' . request()->route('admin.book.edit')->id,
+                    'book_name'  => 'required|unique:books,book_name,' . request()->route('book'),
                     'pdf'        => 'mimes:pdf|max:30000',
                     'book_cover' => 'image',
                 ];

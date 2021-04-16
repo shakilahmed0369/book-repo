@@ -25,7 +25,7 @@ trait ImageTrait{
         // fitting image
         $imageResize->fit( $width, $height );
         // local store path
-        $fullPath = public_path($path.$FullImageName);
+        $fullPath = $path.$FullImageName;
         // saving image
         $imageResize->save($fullPath, $quality);
 
