@@ -51,7 +51,8 @@ class BookTable extends Component
       /*  Delete Logic */
         $destroyBook = Book::findOrFail($bookId);
         $destroyBook->delete();
-        /* deleting existing pdf file from local */
+        /* deleting existing pdf and cover image file from storage */
+        File::delete($destroyBook->book_cover);
         File::delete($destroyBook->pdf);
         $this->dispatchBrowserEvent('swal:modal', [
           'type'    => 'success',

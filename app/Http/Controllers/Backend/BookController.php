@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\BookRequest;
 use App\Models\Book;
-use Illuminate\Http\Request;
 use App\Traits\ImageTrait;
 use App\Traits\PdfTrait;
+use File;
 
 class BookController extends Controller
 {
@@ -79,21 +79,21 @@ class BookController extends Controller
      */
     public function update(BookRequest $request, $id)
     {
-        $update = $this->book::find($id);
-        /* more validation and previous files will delete */
-        $update->update($request->validate());
+        $update = $this->book::findOrFail($id);
+        $validatedData = $request->validated();
+        if(isset($validatedData['book_cover'] )){
+            $validatedData['book_cover'] = ImageTrait::MakeImage($request, 'book_cover', 'storage/backend/book-covers/', 500, 331, 60);
+        }
+        if(isset($validatedData['pdf'])){
+            $validatedData['pdf'] = PdfTrait::MakePdf($request, 'pdf', 'storage/backend/pdf/');
+        }
+        /* Deleting previous files */
+        isset($validatedData['book_cover']) ? File::delete($update->book_cover) : '';
+        isset($validatedData['pdf']) ? File::delete($update->pdf) : '';
+        /* saving filtered data */
+        $update->update($validatedData);
         toast('Book has been Update!', 'success')->width('23rem');
         return redirect()->route('admin.book.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
-    }
 }
