@@ -31,7 +31,10 @@
                     </tr>
                   </thead>
                   <tbody class="list">
-                    @foreach ($books as $book)
+                    <div wire:loading.grid>
+                      @include('backend.layouts.loading')
+                    </div>
+                      @foreach ($books as $book)
                     <tr>
                       <td class="budget"> {{-- counter --}}
                         {{ ++$loop->index }}

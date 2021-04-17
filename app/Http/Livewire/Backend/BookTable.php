@@ -48,11 +48,11 @@ class BookTable extends Component
   public function remove($bookId)
   {
     if (auth()->guard('admin')->user()->can('delete-Book')) {
+      /*  Delete Logic */
         $destroyBook = Book::findOrFail($bookId);
         $destroyBook->delete();
         /* deleting existing pdf file from local */
         File::delete($destroyBook->pdf);
-        /* Write Delete Logic */
         $this->dispatchBrowserEvent('swal:modal', [
           'type'    => 'success',
           'message' => 'Role Deleted Successfully!',
@@ -65,6 +65,6 @@ class BookTable extends Component
   public function render()
   {
     return view('livewire.backend.book-table', 
-    ['books' => Book::where('book_name', 'like', '%'.$this->search.'%')->paginate(20)]);
+    ['books' => Book::where('book_name', 'like', '%'.$this->search.'%')->orderBy('id', 'DESC')->paginate(20)]);
   }
 }
