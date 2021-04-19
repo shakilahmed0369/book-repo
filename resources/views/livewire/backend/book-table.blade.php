@@ -8,11 +8,11 @@
               <!-- Card header -->
               <div class="card-header border-0">
                 <div class="row">
-                  <div class="col-3"><h3 class="mb-0">books</h3></div>
+                  <div class="col-md-3"><h3 class="mb-0">books</h3></div>
                   <div class="col-md-6 text-center">
-                    <input wire:model='search' type="text" value="" placeholder="Live Search" class="">
+                    <input class="form-control" wire:model='search' type="text" value="" placeholder="Live Search" class="">
                   </div>
-                <div class="col-3 text-right">
+                <div class="col-md-3 text-right">
                   @if (auth()->guard('admin')->user()->can('create-Book'))
                   <a href="{{ route('admin.book.create') }}" class="btn-sm btn-success"><b><i class="fas fa-plus"></i> Add book</b></a>
                   @endif

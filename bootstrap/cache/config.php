@@ -10,7 +10,7 @@
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:M37PR+yI15msoGn7FN+g23jgtVgALd8rlHrabgCCxBU=',
+    'key' => 'base64:u40K/ISuU8Mq0jKoDHlucAJJvRuQKXMVlZmSHTdI2DY=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -150,12 +150,12 @@
         array (
           'include' => 
           array (
-            0 => '/opt/lampp/htdocs/book-repo',
+            0 => 'C:\\laragon\\www\\book-repo',
           ),
           'exclude' => 
           array (
-            0 => '/opt/lampp/htdocs/book-repo/vendor',
-            1 => '/opt/lampp/htdocs/book-repo/node_modules',
+            0 => 'C:\\laragon\\www\\book-repo\\vendor',
+            1 => 'C:\\laragon\\www\\book-repo\\node_modules',
           ),
           'follow_links' => false,
           'ignore_unreadable_directories' => false,
@@ -176,7 +176,7 @@
           0 => 'local',
         ),
       ),
-      'temporary_directory' => '/opt/lampp/htdocs/book-repo/storage/app/backup-temp',
+      'temporary_directory' => 'C:\\laragon\\www\\book-repo\\storage\\app/backup-temp',
       'password' => NULL,
       'encryption' => 'default',
     ),
@@ -318,7 +318,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => '/opt/lampp/htdocs/book-repo/storage/framework/cache/data',
+        'path' => 'C:\\laragon\\www\\book-repo\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -500,7 +500,7 @@
     array (
       'enabled' => true,
       'driver' => 'file',
-      'path' => '/opt/lampp/htdocs/book-repo/storage/debugbar',
+      'path' => 'C:\\laragon\\www\\book-repo\\storage\\debugbar',
       'connection' => NULL,
       'provider' => '',
       'hostname' => '127.0.0.1',
@@ -592,7 +592,7 @@
   array (
     'paths' => 
     array (
-      'env' => '/opt/lampp/htdocs/book-repo',
+      'env' => 'C:\\laragon\\www\\book-repo',
       'backupDirectory' => 'env-editor',
     ),
     'envFileName' => '.env',
@@ -616,12 +616,12 @@
       'local' => 
       array (
         'driver' => 'local',
-        'root' => '/opt/lampp/htdocs/book-repo/storage/app',
+        'root' => 'C:\\laragon\\www\\book-repo\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => '/opt/lampp/htdocs/book-repo/storage/app/public',
+        'root' => 'C:\\laragon\\www\\book-repo\\storage\\app/public',
         'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
@@ -638,7 +638,7 @@
     ),
     'links' => 
     array (
-      '/opt/lampp/htdocs/book-repo/public/storage' => '/opt/lampp/htdocs/book-repo/storage/app/public',
+      'C:\\laragon\\www\\book-repo\\public\\storage' => 'C:\\laragon\\www\\book-repo\\storage\\app/public',
     ),
   ),
   'hashing' => 
@@ -677,13 +677,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => '/opt/lampp/htdocs/book-repo/storage/logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\book-repo\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => '/opt/lampp/htdocs/book-repo/storage/logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\book-repo\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -733,7 +733,7 @@
       ),
       'emergency' => 
       array (
-        'path' => '/opt/lampp/htdocs/book-repo/storage/logs/laravel.log',
+        'path' => 'C:\\laragon\\www\\book-repo\\storage\\logs/laravel.log',
       ),
     ),
   ),
@@ -790,7 +790,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => '/opt/lampp/htdocs/book-repo/resources/views/vendor/mail',
+        0 => 'C:\\laragon\\www\\book-repo\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -921,7 +921,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => '/opt/lampp/htdocs/book-repo/storage/framework/sessions',
+    'files' => 'C:\\laragon\\www\\book-repo\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -984,9 +984,9 @@
   array (
     'paths' => 
     array (
-      0 => '/opt/lampp/htdocs/book-repo/resources/views',
+      0 => 'C:\\laragon\\www\\book-repo\\resources\\views',
     ),
-    'compiled' => '/opt/lampp/htdocs/book-repo/storage/framework/views',
+    'compiled' => 'C:\\laragon\\www\\book-repo\\storage\\framework\\views',
   ),
   'flare' => 
   array (
@@ -1035,7 +1035,7 @@
   'livewire' => 
   array (
     'class_namespace' => 'App\\Http\\Livewire',
-    'view_path' => '/opt/lampp/htdocs/book-repo/resources/views/livewire',
+    'view_path' => 'C:\\laragon\\www\\book-repo\\resources\\views/livewire',
     'layout' => 'layouts.app',
     'asset_url' => NULL,
     'middleware_group' => 'web',

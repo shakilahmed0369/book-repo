@@ -19,6 +19,10 @@ class BookController extends Controller
     {
         $this->book = $book;
         $this->middleware('admin.auth');
+        $this->middleware(['permission:read-Book','auth:admin'])->only(['index']);
+        $this->middleware(['permission:create-Book','auth:admin'])->only(['create', 'store']);
+        $this->middleware(['permission:edit-Book','auth:admin'])->only(['edit', 'update']);
+    
     }
 
     /**
