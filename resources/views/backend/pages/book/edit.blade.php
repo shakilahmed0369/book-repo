@@ -53,8 +53,16 @@
             @error('pdf')
             <small class="text-danger">{{ $message }}</small>
             @enderror
-            <br>
-            <input class="btn btn-primary mt-3" type="submit" value="Create">
+
+            <div class="form-group">
+              <span>Featured</span>
+              <label class="custom-toggle mt-3" style="margin-bottom: -6px;">
+                <input value="1" type="checkbox" {{ $book->featured == 1 ? 'checked' : '' }} name="featured">
+                <span class="custom-toggle-slider rounded-circle" data-label-off="No" data-label-on="Yes"></span>
+              </label>
+            </div>
+   
+            <input class="btn btn-primary" type="submit" value="Create">
           </form>
         </div>
       </div>

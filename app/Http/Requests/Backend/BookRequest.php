@@ -30,6 +30,7 @@ class BookRequest extends FormRequest
                     'book_name'  => 'required|unique:books,book_name',
                     'pdf'        => 'required|mimes:pdf|max:30000',
                     'book_cover' => 'required|image',
+                    'featured'   => 'nullable'
                 ];
                 break;
 
@@ -38,6 +39,7 @@ class BookRequest extends FormRequest
                     'book_name'  => 'required|unique:books,book_name,' . request()->route('book'),
                     'pdf'        => 'mimes:pdf|max:30000',
                     'book_cover' => 'image',
+                    'featured'   => 'nullable'
                 ];
                 break;
         }
