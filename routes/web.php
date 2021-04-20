@@ -26,7 +26,7 @@ use App\Http\Controllers\Frontend\FrontendController;
 |--------------------------------------------------------------------------
 | Frontend Routes
 |--------------------------------------------------------------------------
-| Here all Backend routs has been define    
+| Here all Frontend routs has been define    
 */
 Route::get('/', [FrontendController::class, 'index']);
 Route::get('/pdf-view', [FrontendController::class, 'pdfView']);
@@ -65,6 +65,7 @@ Route::group(['prefix'=> 'admin', 'as' => 'admin.'], function () {
   Route:: post('/settings/contactinfo', [SettingsController::class, 'ContactInfoUpdate'])->name('settings.contactInfoUpdate');
   Route:: post('/settings/imageupdate', [SettingsController::class, 'ImageUpdate'])->name('settings.imageUpdate');
   /*  Book Routes */
+  Route::get('/book/featured-books', [BookController::class, 'featuredBook'])->name('book.featured-books');
   Route::resource('/book', BookController::class);
 
 });

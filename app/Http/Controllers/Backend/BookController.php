@@ -35,6 +35,10 @@ class BookController extends Controller
         return view('backend.pages.book.index');
     }
 
+    public function featuredBook(){
+        return view('backend.pages.book.featured-book');
+    }
+
     /**
      * Show the form for creating a new resource.
      *
