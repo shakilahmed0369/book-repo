@@ -87,6 +87,7 @@ class BookController extends Controller
      */
     public function update(BookRequest $request, $id)
     {
+      // return $request;
         $update = $this->book::findOrFail($id);
         $validatedData = $request->validated();
         if(isset($validatedData['book_cover'] )){
@@ -95,9 +96,15 @@ class BookController extends Controller
         if(isset($validatedData['pdf'])){
             $validatedData['pdf'] = PdfTrait::MakePdf($request, 'pdf', 'storage/backend/pdf/');
         }
+        if(!isset($validatedData['featured'])){
+          $update->featured = 0;
+          $update->save();
+        }
+        
         /* Deleting previous files */
         isset($validatedData['book_cover']) ? File::delete($update->book_cover) : '';
         isset($validatedData['pdf']) ? File::delete($update->pdf) : '';
+
         /* saving filtered data */
         $update->update($validatedData);
         toast('Book has been Update!', 'success')->width('23rem');
