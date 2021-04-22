@@ -6,3 +6,7 @@
   @livewire('frontend.index')
   
 @endsection
+
+@section('extraJs')
+
+@endsection
