@@ -16,6 +16,10 @@ class Index extends Component
       'load-more' => 'loadMore'
   ];
  
+  public function search()
+  {
+     $this->search;
+  }
 
   public function updatingSearch()
   {
