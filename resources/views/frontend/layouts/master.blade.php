@@ -20,13 +20,7 @@
     </div>
   </div>
 
-  <div class="search">
-    <input type="search" wire:model='search' class="search-box" />
-    <span class="search-button">
-      <span class="search-icon"></span>
-    </span>
-  </div>
-  
+
   <!-- divider -->
   <div class="divider" style="padding: 25px 0px 25px 0;"></div>
   <!-- divider end-->
