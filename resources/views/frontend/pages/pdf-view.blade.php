@@ -10,7 +10,7 @@
 
 <body style="margin: 0; overflow:hidden;">
   <div style="height: 100vh">
-    <iframe height="100%" width=100% src='{{ asset('frontend/pdf-viewer/public/lib/web/viewer.html?file=').asset('storage/forntend/pdf/Code_Geass.pdf') }}'></iframe>
+    <iframe height="100%" width=100% src='{{ asset('frontend/pdf-viewer/public/lib/web/viewer.html?file=').asset('storage/backend/pdf/'.$data) }}'></iframe>
   </div>
 </body>
 </html>

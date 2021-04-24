@@ -19,7 +19,7 @@ trait PdfTrait
         /* Storing pdf to local storage */
         $fullPath = public_path($path);
         $pdf->move($fullPath, $pdfFullName);
-        return $path . $pdfFullName;
+        return $pdfFullName;
       }
     } catch (Throwable $e) {
 

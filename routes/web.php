@@ -29,7 +29,7 @@ use App\Http\Controllers\Frontend\FrontendController;
 | Here all Frontend routs has been define    
 */
 Route::get('/', [FrontendController::class, 'index']);
-Route::get('/pdf-view', [FrontendController::class, 'pdfView']);
+Route::get('/pdf-view/{data}', [FrontendController::class, 'pdfView'])->name('pdf.view');
 
 /*
 |--------------------------------------------------------------------------

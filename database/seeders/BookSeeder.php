@@ -19,7 +19,7 @@ class BookSeeder extends Seeder
 
         $books->book_name = 'this is a book';
         $books->book_cover = '';
-        $books->pdf = 'storage/backend/pdf/Code_geass.pdf';
+        $books->pdf = 'Code_Geass.pdf';
         $books->save();
       }
         

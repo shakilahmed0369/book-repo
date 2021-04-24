@@ -12,8 +12,8 @@ class FrontendController extends Controller
         return view('frontend.pages.index');
     }
 
-    public function pdfView()
+    public function pdfView($data)
     {
-        return view('frontend.pages.pdf-view');
+        return view('frontend.pages.pdf-view', compact('data'));
     }
 }

@@ -1,7 +1,7 @@
 <div>
   <ul class="text-center">
     @forelse ($books as $book)
-      <li><img src="{{ $book->book_cover ? asset($book->book_cover) : 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book10.jpg' }}" alt=""></li>
+      <li><a href="{{ route('pdf.view', $book->pdf) }}"><img src="{{ $book->book_cover ? asset($book->book_cover) : 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/881020/book10.jpg' }}" alt=""></a></li>
     @empty
       <div class="text-center text-light">No Books found :(</div>
     @endforelse
