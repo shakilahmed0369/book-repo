@@ -335,4 +335,16 @@ margin-top: -184px;
   }
 }
 
+@media (max-width: 575.98px) { 
+  .search.open {
+    width: 320px !important;
+  }
+
+  .header {
+    clip-path: polygon(100% 99%, 0 0, 100% 0);
+  }
+  .img-fulid.ml-5 {
+    width: 232px;
+}
+}
 
