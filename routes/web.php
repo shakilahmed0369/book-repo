@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\Backend\BookController;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Backend\DashboardController;
 
 
 
@@ -38,6 +39,8 @@ Route::get('/pdf-view/{data}', [FrontendController::class, 'pdfView'])->name('pd
 | Here all Backend routs has been define    
 */
 Route::group(['prefix'=> 'admin', 'as' => 'admin.'], function () {
+  /* Dashboad Route */
+  Route::any('/', [DashboardController::class, 'index']);
   // Role Routes
   Route:: resource('/role', RoleController::class);
   // Admin User Routes
