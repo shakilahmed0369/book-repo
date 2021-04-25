@@ -4,9 +4,7 @@
 
   {{-- Adding livewire component  --}}
   @livewire('frontend.index')
-  
-@endsection
+  {{-- Footer aria --}}
 
-@section('extraJs')
-
+  @include('frontend.layouts.footer')
 @endsection

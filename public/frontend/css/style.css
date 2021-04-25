@@ -348,3 +348,13 @@ margin-top: -184px;
 }
 }
 
+.footer-card.py-5.mb--3 {
+  margin-bottom: -60px;
+  z-index: 111111;
+  position: relative;
+  padding-top: 60px !important;
+  padding-bottom: 60px !important;
+}
+ul {
+  margin-bottom: 100px;
+}

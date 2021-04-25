@@ -8,6 +8,13 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('admin.auth');
+  }
+
+
+
     public function index(){
       $totalBooks = Book::count();
       $featuredBooks = Book::where('featured', 1)->count();
