@@ -9,8 +9,7 @@ use App\Http\Controllers\Backend\SettingsController;
 use App\Http\Controllers\Backend\BookController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Backend\DashboardController;
-
-
+use Illuminate\Support\Facades\Artisan;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +21,32 @@ use App\Http\Controllers\Backend\DashboardController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+/*
+|--------------------------------------------------------------------------
+| Project install Routes
+|--------------------------------------------------------------------------
+| This route will install the project on production
+|--------------------------------------------------------------------------
+| WORNING ::  MAKE SURE YOU COMMANTOUT THIS TWO
+| ROUTE IN PRODUCTION !
+|--------------------------------------------------------------------------
+*/
+
+/* Run migration on production */
+Route::get('/install-me', function(){
+  Artisan::call('migrate:fresh');
+  Artisan::call('clear:config');
+  Artisan::call('optimize:clear');
+});
+
+/* If you want to seed some dummy data */
+Route::get('/seed-me', function(){
+  Artisan::call('db:seed');
+  Artisan::call('clear:config');
+  Artisan::call('optimize:clear');
+});
+
 
 /*
 |--------------------------------------------------------------------------
