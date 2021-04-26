@@ -33,19 +33,19 @@ use Illuminate\Support\Facades\Artisan;
 |--------------------------------------------------------------------------
 */
 
-// /* Run migration on production */
-// Route::get('/install-me', function(){
-//   Artisan::call('migrate:fresh');
-//   Artisan::call('clear:config');
-//   Artisan::call('optimize:clear');
-// });
+/* Run migration on production */
+Route::get('/install-me', function(){
+  Artisan::call('migrate:fresh');
+  Artisan::call('optimize:clear');
+  dd('all done go back!');
+});
 
-// /* If you want to seed some dummy data */
-// Route::get('/seed-me', function(){
-//   Artisan::call('db:seed');
-//   Artisan::call('clear:config');
-//   Artisan::call('optimize:clear');
-// });
+/* If you want to seed some dummy data */
+Route::get('/seed-me', function(){
+  Artisan::call('db:seed');
+  Artisan::call('optimize:clear');
+  dd('Seeding done go back!');
+});
 
 
 /*
