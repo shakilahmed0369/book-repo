@@ -103,7 +103,7 @@ class BookController extends Controller
         
         /* Deleting previous files */
         isset($validatedData['book_cover']) ? File::delete($update->book_cover) : '';
-        isset($validatedData['pdf']) ? File::delete($update->pdf) : '';
+        isset($validatedData['pdf']) ? File::delete('storage/backend/pdf/'.$update->pdf) : '';
 
         /* saving filtered data */
         $update->update($validatedData);
